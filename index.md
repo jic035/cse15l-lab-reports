@@ -4,3 +4,5 @@
 ---
 `Try markdown`
 >Block
+---
+*Add another line*
