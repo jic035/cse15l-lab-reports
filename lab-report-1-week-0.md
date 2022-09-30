@@ -56,4 +56,30 @@ This is what I got:
 The OS is now Linux.
 
 ## Setting an SSH Key
-Optimizing Remote Running
+I am using Windows. I successfully generated the keys with `ssh-keygen -t ed25519`
+However, I could not see the output the instruction showed.
+```
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         6/3/2021   2:55 PM            464 ed25519
+-a----         6/3/2021   2:55 PM            103 ed25519.pub
+```
+I think I might in the wrong directory because when I do `ls `, it shows
+```
+Directory: D:\UCSD\TEXTBOOKS\Fall2022\CSE15L
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         9/29/2022  12:20 AM                cse15l-lab-reports
+-a----         9/26/2022   2:23 PM        1124710 LE1.pdf
+-a----         9/28/2022   3:51 PM            574 WhereAmI.class
+-a----         9/28/2022   3:28 PM            311 WhereAmI.java
+```
+Then, I tried to start the ssh-agent service, but it reports an error message.
+![image](Key.png)
+I will figure this out in an office hour
+
+## Optimizing Remote Running
+I did not manage to store and access the key, so when I tried to directly access some files or show directories on the remote computor, it reports an error when I did `ssh cs15lfa22@ieng6.ucsd.edu "ls"`
+![image](error.png)
