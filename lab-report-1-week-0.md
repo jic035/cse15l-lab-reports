@@ -13,12 +13,14 @@ I started by opening a terminal in VScode: click Terminal, then new Terminal.
 Type in `$ ssh cs15lfa22ta1@ieng6.ucsd.edu`
 Type "yes" and then enter the passward.
 After that, you should see
-![image](RemoteControl.png)
+![image](Login.png)
 
 ## Trying Some Commands
 I tried several commands
 Useful commands to try are `cd`, `ls`, `pwd`, `mkdir`, and `cp`.
-![image](Commands.png)
+Here, I tried pwd, which shows current working directory. Since I have successfully accessed the remote computor, it shows "Linux" instead of "Windows11"
+I also tried `mkdir`, which makes a file. I can see it by using `ls`, which prints out all the files in current directory. Then, I removed it with `rmdir`, and it is gone when I do `ls` again.
+![image](try.png)
 
 ## Moving Files with scp
 I opened a folder with VScode that stores all my CSE15L materials. I then created a java file named `WhereAmI`.
@@ -78,8 +80,12 @@ d-----         9/29/2022  12:20 AM                cse15l-lab-reports
 ```
 Then, I tried to start the ssh-agent service, but it reports an error message.
 ![image](Key.png)
-I will figure this out in an office hour
+I will figure this out in an office hour.
 
 ## Optimizing Remote Running
 I did not manage to store and access the key, so when I tried to directly access some files or show directories on the remote computor, it reports an error when I did `ssh cs15lfa22@ieng6.ucsd.edu "ls"`
 ![image](error.png)
+Then, I tried to clear the password files using `rm C:\Users\Jiayi\.ssh\id_ed25519.pub`, and `rm C:\Users\Jiayi\.ssh\id_ed25519.`.
+Al last, I tried `ssh cs15lfa22@ieng6.ucsd.edu "ls"` again. As expected, it asks for passward.
+![image](PasswordNeeded.png)
+
