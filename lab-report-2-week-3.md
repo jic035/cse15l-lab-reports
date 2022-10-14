@@ -1,6 +1,7 @@
 # Lab Report 2
 ---
-## Part 1
+> Part 1
+
 Here is my code:
 ```
 import java.io.IOException;
@@ -79,7 +80,7 @@ The method recognized `"/search"` in the URL path by calling `.contains`, so it 
 In this case, in the array, `{"pineapple", "pear", "apple"}`, `"pineapple"` and `"apple"` contains the argument after `=`, `app`, so they are added to a new list named `toPrint` and are printed.
 
 ---
-## Part 2
+> Part 2
 ### Bug1
 One bug I found is in the `filter` method in ListExamples file. Our group wrote a `class LengthChecker implements StringChecker`. It checks for length of the input string. If the length is greater than 5, return true; else, return false. In my test, I added 4 string elements to the list in total, in which two of them are longer than 5 characters. So, the expected output should be the two String elements in the same order as they are in the original list.
 Here is my code:
