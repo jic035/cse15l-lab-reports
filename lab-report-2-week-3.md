@@ -61,20 +61,28 @@ On the command line, I first compiled my java files using `javac Server.java Sea
 In this step, I called the `main` method named SearchEngine. Inside it, I created a new object `Handler1` that implements `handleRequest` written above. 
 After running the java file, the Command line successfully generates a server because the method `Server.start(port, new Handler)` is called. The command line shows `Server Started! Visit http://localhost:2737 to visit.`
 I clicked on the URL. The webpage looks like this:
+
 ![image](empty.png)
+
 Here, a method in class Handler1 that implements URLHandler is called. This method is named `handleRequest`. It takes in a url and returns a String. In this case, the getPath() method gets "/", so it returns an empty string `""`. That is why the webpage shows nothing.
 
 Then, I tried to add `/add?s=pineapple` at the end of the URL. The `handleRequest` method recognizes the `add` inside the path, so the `.add(parameters[1])` method is called. Here, I used `.split` to make a list and get the element after `=` sign, which is `parameters[1]`, `"pineapple"`. As a result, pineapple is added to the string list, `strList`. The webpage returns `Successfully added: pineapple`.
+
 ![image](addPineapple.png)
 
 I also tried to add pear and apple. The method calls are the same as above. String`"pear"` and `"apple"` are added to the list. Now the `strList` should have `{"pineapple", "pear", "apple"}`.
+
 ![image](addPear.png)
 ![image](addApple.png)
 
 After that, I tried the search function. I added `/search?s=app` at the end of the domain. The command line behaves as follows:
+
 ![image](terminal.png)
+
 The webpage shows:
+
 ![image](searchApp.png)
+
 as expected.
 The method recognized `"/search"` in the URL path by calling `.contains`, so it checks the input after`=` and adds elements that contains the input in the original arraylist to a new arraylist. Then, the new arraylist gets printed out on the webpage.
 In this case, in the array, `{"pineapple", "pear", "apple"}`, `"pineapple"` and `"apple"` contains the argument after `=`, `app`, so they are added to a new list named `toPrint` and are printed.
@@ -106,15 +114,21 @@ public class ListTests{
 }
 ```
 
-Here, `"banana"` should appear before `"123456"` when the `.flter` method is called. However, this test failed.
+Here, `"banana"` should appear before `"123456"` when the `.flter` method is called. 
+This test failed.
+
 ![image](ListExampleFailure.png)
+
 This is the sympton. The error message says that the order of the elements in the list is wrong.
 
 I then look for bug/bugs that caused this problem. I found that in line 27, the checked String s is added to index 0 of the list, meaning that each time the string is prepended to the list, while it is supposed to be added at the end.
+
 ![image](ListBug.png)
+
 This is the bug.
 
 After that, I fixed the bug by deleting the index at line 27.
+
 ![image](ListFixed.png)
 
 Now I run the test, test passed.
@@ -142,7 +156,9 @@ For ArrayExamples, there is a bug in `reversed` method. I ran tests as shown bel
     assertArrayEquals(new int[]{4, 3, 2, 1}, ArrayExamples.reversed(input3));
   }
 ```
+
 ![image](ArrayFailed.png)
+
 The error message indicates the sympton. It saya `arrays first differed at element [0]; expected:<3> but was:<0>` ... `at ArrayTests.testReversed(ArrayTests.java:24)`. So, I looked at line 24 in my test, which is 
 ```
 int[] input2 = {1, 2, 3};
