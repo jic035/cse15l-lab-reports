@@ -50,4 +50,4 @@ Here is what the command lind looks like
 [cs15lfa22hu@ieng6-201]:technical:140$ find 911report -atime -7
 911report
 ```
-It turns out that all files in /911reports is modified 7 days ago.
+It turns out that all files in /911reports is modified 7 days ago because when I try `-8`, it prints out all files, meaning that all files are edited 8 days ago. When I tried `-7`, it only prints out the name of this folder, and no file name is printed, meaning that no files are edited within 7 days.
