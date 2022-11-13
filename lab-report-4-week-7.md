@@ -1,4 +1,5 @@
 # Vim Practice
+### Part 1
 > Task: changing the name of the `start` parameter and its uses to `base`.
 
 Shortest path: 
@@ -42,3 +43,9 @@ I did `n.` for three times until every `start` has been changed into `base`. I k
 Lastly, I used `:wq` to save and exit the vim.
 
 ![image](Week7Screenshots\exitVim.png)
+
+### Part2
+
+I spent approximate the same amount of time doing the two styles. However, I think if I practice Vim more, directly editing from the remote should be faster because I spent a lot of time typing the path and my remote account information when I used `scp`, and I do not think I could cut that time unless I increase my typing speed.
+
+However, the advantage for editing locally is that I could see the newest version more easily. I just need to click the file on my computer without logging into remote and entering vim.

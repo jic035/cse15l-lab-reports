@@ -1,5 +1,5 @@
 # `find` Command Options
-> Search for filed modified before x days
+> Search for files modified before x days
 
 Use the command `find / -atime -x`
 
