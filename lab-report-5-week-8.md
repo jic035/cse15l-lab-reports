@@ -59,3 +59,11 @@ Here are the three screenshots.
 ![image](Week8Screenshots\firstSubmission.png)
 ![image](Week8Screenshots\secondSubmission.png)
 ![image](Week8Screenshots\thirdSubmission.png)
+
+>Trace grade.sh
+
+the student submission is passed in as the first argument in the command line, which in this case, passed in by the url input. After cloning, the message of successful cloning is passd into the 'streamToString' method and was printed into the webpage.
+
+Then, grade.sh checks if the ListExamples.java file exists with command '-e'. It then checks if the file compiles by checking the exit code. The grade.sh runs the test in TestListExamples and redirects the standard output into error.txt. I did not separate the standard output and standard error in different files. I check if error.txt contains certain error messages and grade the submission accordingly. 
+
+In my first example, the file ListExamples.java exists, so it echos "File exists!". Then, passing to the second if condition checkpoint, I don't know why the second if statement does not produce any output because I am expecting to see "Compile succeeded" here but see nothing. The submission satisfies the third and forth if condition because it has the expected errors, so it goes to 'then' commands. The totalPoints are deducted twice and echos "[FAILED 0/1] testFilter" and "[FAILED 0/1] testMerge".
